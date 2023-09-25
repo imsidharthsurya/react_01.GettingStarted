@@ -1,16 +1,28 @@
-const head1=React.createElement("h1",{
-    id:"head1",
-    style:{color:"green",textAlign:"center"}
-},"this is heading 1")
+import React from "react";
+import ReactDOM from "react-dom/client";
+const myName="sidharth surya"
+const head1=<h1>this is {myName}</h1>//React element
 
-const head2=React.createElement("h2",{
-    id:"head2",
-    style:{color:"red",marginLeft:"20px"}
-},"this is heading 2")
+//React component   nothing but normal fn. which will return some piece of jsx or react element
+const HeaderComponenet=()=>{
+    return (
+        <div>
+            {head1}
+            <p>Made by learning react</p>
+            <FooterComp/>
+        </div>
+    )
+}
+const FooterComp=()=>{
+    return (
+        <div>
+            <p>all copyrights reserved</p>
+        </div>
+    )
+}
 
-const cont=React.createElement("div",{
-    className:"container"
-},[head1,head2])
+console.log(head1);
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(cont)
+
+root.render(<HeaderComponenet />)
